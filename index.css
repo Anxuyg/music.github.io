@@ -1,0 +1,81 @@
+* {
+    padding: 0;
+    margin: 0;
+    color: rgb(243, 165, 165);
+}
+
+a {
+    text-decoration: none;
+    color: rgb(243, 165, 165);
+}
+
+.music-box {
+    margin: 10px;
+    width: 380px;
+    border: 1px solid rgb(240, 158, 165);
+    box-shadow: 0px 2px 5px 1px rgb(241, 192, 192);
+    /*1. 水平阴影 2.垂直阴影(1,2可负值) 3.模糊距离 4.阴影尺寸 5.颜色 6.可以不设 将外部阴影改内部*/
+    height: 100px;
+}
+
+.music {
+    padding: 20px;
+    position: relative;
+}
+
+.box::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.inin {
+    position: absolute;
+    width: 140px;
+    height: 30px;
+    top: 40px;
+}
+
+.inin i {
+    font-size: 25px;
+    margin-right: 15px;
+}
+
+.text {
+    position: absolute;
+    left: 40%;
+    top: 35%;
+}
+
+.text h1 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.text p {
+    font-size: 10px;
+}
+
+.progress {
+    position: absolute;
+    width: 260px;
+    top: 65px;
+}
+
+.progress .bar {
+    height: 3px;
+    margin-top: 5px;
+    background-color: rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.progress .progress-tow {
+    background-color: #ee8a87;
+    height: 3px;
+    width: 0;
+    position: relative;
+}
+
+.progress .time {
+    float: right;
+}
