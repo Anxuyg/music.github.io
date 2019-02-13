@@ -1,13 +1,13 @@
 var musicList = [{
-        src: 'http://m10.music.126.net/20190211230030/45263ce95c9633c96d51bfadbd9f4fa4/ymusic/50ea/1db2/4ba2/06db8ee0f4ec63be85ba6c43ec17daba.mp3',
+        src: 'https://m10.music.126.net/20190213163838/7eb9418045989b3f1d3657c3b977fb57/ymusic/50ea/1db2/4ba2/06db8ee0f4ec63be85ba6c43ec17daba.mp3',
         title: '1376',
         auther: 'ANU'
     }, {
-        src: 'http://m10.music.126.net/20190211225920/cc032b366a07bf5637c2bf0df9786fae/ymusic/5605/07fd/b516/a10d9e248c19d9ac2d40d2b0596fc09b.mp3',
+        src: 'https://m10.music.126.net/20190213163755/b3da7e84d58f572f4602cb3d397bfcf0/ymusic/5605/07fd/b516/a10d9e248c19d9ac2d40d2b0596fc09b.mp3',
         title: '像我这样的人',
         auther: '毛不易'
     }, {
-        src: 'http://m10.music.126.net/20190211225638/2cb4e55aba7ed895e85a380bcbacde4a/ymusic/5358/5509/005b/d2fb70a010bc1fae167571fcd50bb18e.mp3',
+        src: 'https://m10.music.126.net/20190213163449/22544d725ec99bb3eb05584019955f83/ymusic/5358/5509/005b/d2fb70a010bc1fae167571fcd50bb18e.mp3',
         title: 'Way Back Home',
         auther: 'SHAUN'
     }, {
@@ -20,9 +20,9 @@ var musicList = [{
         title: 'IF YOU',
         auther: 'Big Bang'
     }, {
-        src: 'http://m8.music.126.net/20190211223653/39dd1ab48ef244c30ed21020b1e491e9/ymusic/5b06/2890/55c0/b4201bcf1f6135427ad0cf1b667c6451.mp3',
-        title: '生僻字',
-        auther: '陈柯宇'
+        src: 'http://m10.music.126.net/20190213163914/e8cd5c3a1505c5ab4754be37342b97e2/ymusic/2614/e5c8/2a66/95c34aff6dcce37eae00dc55761fc592.mp3',
+        title: 'FLY',
+        auther: 'ANU'
     }
 ]
 
@@ -38,20 +38,20 @@ var progressTow = document.querySelector('.music-box .progress-tow')
 var timer
 
 var music = new Audio()
-music.autoplay = true
+music.autoplay = true //设置为自动播放，false不自动播放
 var musicIndex = 0
 
 loadMusic(musicList[musicIndex])
 
 centent.onclick = function() {
     var icon = this.querySelector('.fa')
-    if (icon.classList.contains('fa-pause')) {
-        music.pause()
-    } else {
+    if (icon.classList.contains('fa-play')) {
         music.play()
+    } else {
+        music.pause()
     }
-    icon.classList.toggle('fa-pause')
     icon.classList.toggle('fa-play')
+    icon.classList.toggle('fa-pause')
 }
 
 right.onclick = loadNextMusic
@@ -63,10 +63,10 @@ music.onplaying = function() {
     timer = setInterval(function() {
         updateProgress()
     }, 1000)
-    console.log('pause')
+    console.log('play')
 }
 music.onpause = function() {
-    console.log('play')
+    console.log('pause')
     clearInterval(timer)
 }
 bar.onclick = function(e) {
